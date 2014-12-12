@@ -10,12 +10,14 @@
 	</form>
 	<% @tweets.each do |tweet| %>
 	  <p><%= tweet.content %></p>
-	  <form action="/tweet/<%= tweet.id %>" method="post">
+	  <form action="/user/<%= tweet.id %>" method="post">
 	    <input type="hidden" name="_method" value="delete">
 	    <input type="submit" value="Delete" class="body_buttons">
 	  </form>
 	  <a href="/tweet/<%= tweet.id %>/edit"><button class="body_buttons">Edit</button></a>
 	<%end%>
+
+
 </div>
 
 

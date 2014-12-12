@@ -4,24 +4,19 @@ get '/user/:id' do
   erb :'user/profile'
 end
 
-post '/tweet/new' do
+post '/user/:id' do
   @tweet = Tweet.create!(content: params[:content], user_id: params[:id])
   redirect "/user/#{params[:id]}"
 end
 
-delete '/user/:id' do
-  @exploded_tweet = Tweet.destroy()
-  redirect "/user/#{@user.id}"
-end
+# get '/user/:id/edit' do
+#   erb :'user/edit'
+# end
 
-get '/user/:id/edit' do
-  erb :'user/edit'
-end
-
-post '/user/:id/edit' do
-  @edited_user = User.update(params[:user])
-  redirect "/user/#{@edited_user.id}"
-end
+# post '/user/:id/edit' do
+#   @edited_user = User.update(params[:user])
+#   redirect "/user/#{@edited_user.id}"
+# end
 
 get '/user/:id/followers' do
   @followers = User.find(params[:id]).followers
@@ -34,10 +29,11 @@ get '/user/:id/following' do
 end
 
 get '/user/:id/timeline' do
+  @following = User.find(params[:id]).following
   erb :timeline
 end
 
-delete '/tweet/:id' do
+delete '/user/:id' do
   @tweet = Tweet.find(params[:id]).destroy
   redirect ("user/#{@tweet.user_id}")
 end
