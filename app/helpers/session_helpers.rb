@@ -1,11 +1,12 @@
 
 helpers  do
 
-  def site_name
+  def new_site_name
     '#' + (Faker::Company.bs).split.sample(rand(1..3)).map(&:capitalize).join(' ').gsub(/[aeiouy]*$/,'') + "itter"
   end
 
   def authorized?
+    # p session[:user_id]
     !!session[:user_id]
   end
 
@@ -29,6 +30,7 @@ helpers  do
 
   def redirect_home
     if authorized?
+      puts "here"
       redirect "/user/#{session_user_id}"
     else
       redirect '/'
