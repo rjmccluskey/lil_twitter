@@ -28,6 +28,7 @@ get '/user/:id/following' do
   erb :'user/following'
 end
 
+
 get '/user/:id/timeline' do
   @following = User.find(params[:id]).following
   erb :timeline
