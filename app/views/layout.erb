@@ -19,12 +19,12 @@
   <title></title>
   <% if authorized? %>
     <div class="heading">
-      <a href="/user/<%= @user.id %>/timeline"><button class="headbutton">Timeline</button></a>
-      <a href="/user/<%= @user.id %>"><button class="headbutton">Profile</button></a>
-      <a href="/user/<%= @user.id %>/followers"><button class="headbutton">Followers</button></a>
-      <a href="/user/<%= @user.id %>/following"><button class="headbutton">Following</button></a>
+      <a href="/user/<%= session_user_id %>/timeline"><button class="headbutton">Timeline</button></a>
+      <a href="/user/<%= session_user_id %>"><button class="headbutton">Profile</button></a>
+      <a href="/user/<%= session_user_id %>/followers"><button class="headbutton">Followers</button></a>
+      <a href="/user/<%= session_user_id %>/following"><button class="headbutton">Following</button></a>
       <button class="right">Sign Out</button>
-      <form action="/user/<%=@user.id%>" method="post">
+      <form action="/user/<%=session_user_id%>" method="post">
         <input class="tweet" type="submit" value="Tweet">
         <textarea type="text" name="content" class="tweet_box"></textarea>
       </form>
