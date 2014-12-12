@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>User Home Page</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/application.css">
+  </head>
+<body>
+<div class="container">
+  <div id="welcome">
+    <h1><font color="grey">Welcome Back </font><font color="3A9DDF"><%= @user_home %></font></h1>
+  </div>
+</div>
+
+<div class="post_tweet">
+<form action="/tweet" method="post">
+  <input type="text" name="content" value="your thoughts?..."/>
+  <button class="button" type="submit">Post Tweet</button>
+</form>
+</div>
+
+<div class="profile">
+  <img class="userpicture" src= <%= @user.picture_url %> height="90" width="90">
+  <div id="description">
+  <h3>Name: <%= @user.full_name %></h3>
+  <h3>About Me</h3>
+  <p><%= @user.about_me %></p>
+  </div>
+  <a href="/"><h2>Edit Profile</h2></a>
+</div>
+
+<div class="body_area">
+<h2 class="newsheader"> Your Newsfeed </h2>
+  <div id="news_feed">
+    <ul><% @tweets.each do |tweet| %>
+    <%= tweet.content %><br>
+    <br>
+        <% end %>
+    </ul>
+  </div>
+</div>
+
+<div class="right_area">
+  <div id="right_area">
+  <h3>Currently following..</h3>
+  <ul><% @following.each do |user| %>
+    <a href="/<%= User.find_by(id: user.followed_id).username %>"><%= User.find_by(id: user.followed_id).username %></a><br>
+    <br>
+        <% end %>
+    </ul>
+  </div>
+</div>
+
+<div class="home">
+<a href="/home/<%= @user_home %>" style="text-decoration: none">Home</a>
+</div>
+
+<div class="logout">
+<a href="/logout" style="text-decoration: none">Logout</a>
+</div>
+
+
+</body>
+
+</html>

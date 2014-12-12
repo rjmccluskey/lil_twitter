@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>feedMe Home Page</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/application.css">
+  </head>
+<body>
+<div class="container">
+  <div id="title">
+    <h1><font color="grey">feed</font><font color="3A9DDF">Me</font></h1>
+  </div>
+  <img class="dbc" src="http://www.thehackerati.com/blog/assets/img/dbc.png" WIDTH=175 HEIGHT=60>
+</div>
+
+<form class="login" action="/login" method="post">
+    <label for="username">Username:</label>
+    <input type="text" name="username"/>
+    <label for="password">Password:</label>
+    <input type="password" name="password"/>
+    <button class="button" type="submit">Login</button>
+</form>
+
+<h3 class="signuptext">New User? Sign up</h3>
+<form class="loginuser" action="/sign-up" method="post">
+    <label for="username">Username:</label>
+    <input type="text" name="username"/>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" name="password"/>
+     <br>
+    <label for="password">Re-Type Password:</label>
+    <input type="password" name="password1"/>
+    <br>
+    <br>
+    <button class="button" type="submit">Sign Me Up!</button>
+</form>
+
+
+</body>
+</html>
