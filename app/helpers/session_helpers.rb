@@ -13,6 +13,7 @@ helpers  do
   def login(user)
     session[:user_id] = user.id
     session[:username] = user.username
+    session[:email] = user.email
   end
 
   def logout
