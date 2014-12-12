@@ -1,7 +1,3 @@
-get '/' do
-  erb :login
-end
-
 get '/user/:id' do
   @user = User.find(params[:id])
   @tweets = @user.tweets.reverse
