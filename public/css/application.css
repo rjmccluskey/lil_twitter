@@ -1,3 +1,7 @@
+.body {
+  font-family: Avenir;
+}
+
 .heading {
   	height: 65px;
 	width: 100%;
@@ -118,10 +122,10 @@
   }
 }
 
-.body_buttons { 
+.body_buttons {
 	position: relative;
 	font-family: avenir;
-	padding: .1em 1em;
+	padding: .1em .1em;
 	color: #444;
 	color: rgba(0,0,0,.8);
 	border: 1px solid #999;
@@ -152,15 +156,19 @@
 
 
 .left_side {
-	position: relative;
+/*	position: relative;*/
+  text-align: center;
+  background-color: #E8E8E8;
 	float: left;
-	height: 550px;
-	width: 20%;
-	border: 1px solid #999;
-	padding: 25px;
+	height: 800px;
+	/*width: 180px;*/
+	/*border: 1px solid black;*/
+	padding: 15px;
 }
+
  .right_side {
  	position: relative;
+  background-color: red;
  	height: 600px;
  	border: 1px solid black;
  	margin-left: 24%;
@@ -182,6 +190,20 @@
 	margin-left: 40%;
   	transition: all .5s linear;
   	vertical-align: middle;
+
+}
+
+.user_image {
+  border-radius: 900px;
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+}
+
+.user_name {
+  font-size: 20px;
+  padding: 5px;
+  margin: 0px;
 
 }
 
