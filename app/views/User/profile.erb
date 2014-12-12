@@ -1,5 +1,5 @@
 <div class="left_side">Photo<br><br><br><br><br><br><br>
-	<h1><%= @user.username %></h1>
+  <h1><%= @user.username %></h1>
 	<a href="/user/<%=@user.id%>/following"><button class="body_buttons">Following</button></a>
 	<a href="/user/<%=@user.id%>/followers"><button class="body_buttons">Followers</button></a>
 </div>
@@ -12,9 +12,9 @@
 	  <p><%= tweet.content %></p>
 	  <form action="/tweet/<%= tweet.id %>" method="post">
 	    <input type="hidden" name="_method" value="delete">
-	    <input type="submit" value="delete">
+	    <input type="submit" value="Delete" class="body_buttons">
 	  </form>
-	  <a href="/tweet/<%= tweet.id %>/edit"><button>Edit Tweet</button></a>
+	  <a href="/tweet/<%= tweet.id %>/edit"><button class="body_buttons">Edit</button></a>
 	<%end%>
 </div>
 

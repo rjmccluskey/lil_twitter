@@ -1,4 +1,3 @@
-
 helpers  do
 
   def site_name

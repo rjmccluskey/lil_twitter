@@ -17,6 +17,8 @@
   <script src="/js/application.js"></script>
 
   <title></title>
+</head>
+<body>
   <% if authorized? %>
     <div class="heading">
       <a href="/user/<%= @user.id %>/timeline"><button class="headbutton">Timeline</button></a>
@@ -30,8 +32,6 @@
       </form>
     </div>
   <% end %>
-</head>
-<body>
   <%= yield %>
 </body>
 </html>
