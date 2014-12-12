@@ -31,7 +31,7 @@ helpers  do
   def redirect_home
     if authorized?
       puts "here"
-      redirect "/user/#{session_user_id}"
+      redirect "/users/#{session_user_id}"
     else
       redirect '/'
     end

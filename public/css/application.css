@@ -87,23 +87,12 @@
 }
 
 .tweet {
-	float: right;
-	font-family: avenir;
-	padding: .1em .5em;
-	color: #444;
-	color: rgba(0,0,0,.8);
-	border: 1px solid #999;
-	border: 0 rgba(0,0,0,0);
-	background-color: #E6E6E6;
-	border-radius: 3px;
-	font-weight: 100;
-	letter-spacing: 0.01em;
-	height: 47px;
-	margin-right: 70px;
-  margin-top: -45px;
-  transition: all .5s linear;
+	display: block;
 }
 
+.tweet img {
+  height: 100px;
+}
 .tweet:hover{
 	box-shadow: 0 2px 0 grey;
     transform: translateY(3px);
