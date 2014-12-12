@@ -1,9 +1,16 @@
-
-
 get '/' do
+  # session.clear
   redirect_home if authorized?
   # flash[:notice] = "test"
-  erb :login
+
+
+
+  erb :login, :layout => false
+end
+
+get '/logout' do
+  logout
+  redirect_home
 end
 
 post '/login' do
