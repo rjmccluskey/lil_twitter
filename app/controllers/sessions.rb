@@ -2,9 +2,6 @@ get '/' do
   # session.clear
   redirect_home if authorized?
   # flash[:notice] = "test"
-
-
-
   erb :login, :layout => false
 end
 

@@ -1,9 +1,10 @@
-5.times do
-  user = User.create(username: Faker::Internet.user_name, email: Faker::Internet.free_email, password: "boom")
-  rand(1..10).times do
-    user.tweets << Tweet.create(content: Faker::Company.catch_phrase)
+10.times do
+  user_args = {username: Faker::Internet.user_name, email: Faker::Internet.email}
+  new_user = User.new(user_args)
+  new_user.password = Faker::Internet.password
+  new_user.save!
+  10.times do
+    Tweet.create!(content: Faker::Lorem.sentence, user_id: new_user.id)
   end
 end
-25.times do
-  Following.create(user_id: rand(1..5), follower_id: rand(1..5))
-end
+

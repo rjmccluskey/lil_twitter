@@ -2,7 +2,7 @@
 <!-- <p>Search for Followers:</p> -->
 <form action="/search" method="POST" name="search"
 <% @followers.each do |follower| %>
-  <p>User Name: <%= follower.username %></p>
+  <p>User Name: <%= follower.username %></p><button><a href= '/user/<%= follower.id %>'>View Their Profile!</button>
   <p>Email: <%= follower.email %><p>
 <%end%>
 
