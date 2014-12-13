@@ -1,4 +1,4 @@
-.body {
+/*.body {
   font-family: Avenir;
   height: 100%;
 
@@ -80,14 +80,15 @@
 	font-weight: 100;
 	letter-spacing: 0.01em;
 	height: 50%;
-	margin-right: 10px;
-  margin-top: -45px;
+	margin-right: 100px;
+  margin-top: -70px;
   transition: all .5s linear;
   vertical-align: middle;
 }
 
 .tweet {
 	display: block;
+
 }
 
 .tweet img {
@@ -210,3 +211,266 @@
 
 
 
+*/
+.body {
+  font-family: Avenir;
+  height: 100%;
+
+}
+
+.heading {
+  height: 65px;
+  width: 100%;
+  font-family: Avenir;
+  border: 1px solid black;
+  background-position: 0px 0px;
+  -webkit-animation: animatedBackground 20s linear infinite;
+  background-image: url('http://new.antiskimmingeye.com/wp-content/uploads/2013/11/ase-banner2.jpg');
+}
+
+@-webkit-keyframes animatedBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: -220px 0; }
+}
+
+.headbutton {
+  font-family: avenir;
+  padding: .1em .5em;
+  color: #444;
+  color: rgba(0,0,0,.8);
+  border: 1px solid #999;
+  border: 0 rgba(0,0,0,0);
+  background-color: #E6E6E6;
+  border-radius: 3px;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  height: 70%;
+  margin-left: 10px;
+  margin-top: 9px;
+  transition: all .5s linear;
+}
+
+.headbutton:hover{
+  box-shadow: 0 2px 0 grey;
+  transform: translateY(3px);
+  background: #FFB870;
+}
+
+.right {
+  float: right;
+  position: relative;
+  font-family: avenir;
+  padding: .1em .5em;
+  color: #444;
+  color: rgba(0,0,0,.8);
+  border: 1px solid #999;
+  border: 0 rgba(0,0,0,0);
+  background-color: #E6E6E6;
+  border-radius: 3px;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  height: 70%;
+  margin-right: 10px;
+  margin-top: 9px;
+  transition: all .5s linear;
+}
+
+.right:hover{
+  box-shadow: 0 2px 0 grey;
+  transform: translateY(3px);
+  background: #FFB870;
+}
+
+.tweet_box {
+  float: right;
+  font-family: avenir;
+  padding: .1em .35em;
+  color: #444;
+  color: rgba(0,0,0,.8);
+  border: 1px solid #999;
+  border: 0 rgba(0,0,0,0);
+  background-color: #E6E6E6;
+  border-radius: 3px;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  height: 50%;
+  margin-right: 10px;
+  margin-top: -45px;
+  transition: all .5s linear;
+  vertical-align: middle;
+}
+
+.tweet {
+  display: block;
+}
+
+.tweet img {
+  height: 100px;
+}
+.tweet:hover{
+  box-shadow: 0 2px 0 grey;
+    transform: translateY(3px);
+    background: #FFB870;
+}
+
+@-webkit-keyframes body_buttons {
+  to {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+@keyframes body_buttons {
+  to {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+.body_buttons {
+  position: relative;
+  font-family: avenir;
+  padding: .1em .1em;
+  color: #444;
+  color: rgba(0,0,0,.8);
+  border: 1px solid #999;
+  border: 0 rgba(0,0,0,0);
+  background-color: #E6E6E6;
+  border-radius: 3px;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  height: 45px;
+  display: inline-block;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.body_buttons:hover, .body_buttons:focus, .body_buttons:active {
+    -webkit-animation-name: body_buttons;
+    animation-name: body_buttons;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+
+.left_side {
+  text-align: center;
+  background-color: #E8E8E8;
+  float: left;
+  height: 900px;
+  padding: 15px;
+}
+
+ .right_side {
+  position: relative;
+  background-color: red;
+  height: 600px;
+  border: 1px solid black;
+  margin-left: 24%;
+  padding: 28px;
+ }
+
+ .tweet_box2 {
+  position: relative;
+  font-family: avenir;
+  height: 42px;
+  color: #444;
+  color: rgba(0,0,0,.8);
+  border: 1px solid #999;
+  border: 0 rgba(0,0,0,0);
+  background-color: #E6E6E6;
+  border-radius: 3px;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  margin-left: 40%;
+  transition: all .5s linear;
+  vertical-align: middle;
+}
+
+.user_image {
+  border-radius: 900px;
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+}
+
+.user_name {
+  font-size: 20px;
+  padding: 5px;
+  margin: 0px;
+}
+.user_tweet {
+  width:50%;
+  padding-left:20px;
+}
+.user_tweet img{
+  height: 100px;
+  float:left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.created_at {
+  padding-left:200px;
+
+}
+
+.delete_button{
+  position: relative;
+  font-family: avenir;
+  padding: .1em .1em;
+  color: #444;
+  color: rgba(0,0,0,.8);
+  border: 1px solid #999;
+  border: 0 rgba(0,0,0,0);
+  background-color: #E6E6E6;
+  border-radius: 3px;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  height: 45px;
+  display: inline-block;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  float:right
+}
+
+.delete_button:hover, .delete_button:focus, .delete_button:active {
+    -webkit-animation-name: delete_button;
+    animation-name: delete_button;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+@-webkit-keyframes delete_button {
+  to {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+@keyframes delete_button {
+  to {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+.content {
+  padding: 5px;
+  font-size: 14px;
+  font-family: avenir;
+}
