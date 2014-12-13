@@ -11,15 +11,15 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
-<!--   <link rel="stylesheet" href="/css/sessions.css"> -->
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
   <title></title>
+</head>
+<body>
   <% if authorized? %>
     <div class="heading">
-
       <a href="/user/<%= session_user_id %>/timeline"><button class="headbutton">Timeline</button></a>
       <a href="/user/<%= session_user_id %>"><button class="headbutton">Profile</button></a>
       <a href="/user/<%= session_user_id %>/followers"><button class="headbutton">Followers</button></a>
@@ -28,12 +28,11 @@
       <form action="/user/<%=session_user_id%>" method="post">
 
         <input class="tweet" type="submit" value="Tweet">
-        <textarea type="text" name="content" class="tweet_box"></textarea>
+        <textarea type="text" name="content" class="tweet_box" maxlength="140"></textarea>
       </form>
     </div>
   <% end %>
-</head>
-<body>
-  <%= yield %>
+<%= yield %>
 </body>
+
 </html>
