@@ -1,0 +1,25 @@
+<div class="left_side"><img class="user_image" src="<%= gravatar_address(@user.email) %>"/>
+  <p class="user_name"><%= @user.username %></p>
+  <a href="/user/<%=@user.id%>/following"><button class="body_buttons">Following</button></a>
+  <a href="/user/<%=@user.id%>/followers"><button class="body_buttons">Followers</button></a>
+  <a href="/user/<%=@user.id%>/followers"><button class="body_buttons">Follow</button></a>
+</div>
+<div class="main_body">
+<!--  <form action="/user/<%=@user.id%>" method="post">
+    <textarea type="text" name="content" class="tweet_box2"></textarea>
+    <input type="submit" value="Tweet" class="body_buttons"></input>
+  </form> -->
+  <% @tweets.each do |tweet| %>
+    <p><%= tweet.content %></p>
+    <form action="/user/<%= tweet.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete" class="body_buttons">
+    </form>
+    <a href="/tweet/<%= tweet.id %>/edit"><button class="body_buttons">Edit</button></a>
+  <%end%>
+</div>
+
+<div class=''>
+
+
+</div>
