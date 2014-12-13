@@ -1,6 +1,6 @@
 <h3>Following</h3>
 <% @following.each do |follows| %>
-  <p>User Name: <%= follows.username %></p><button><a href= '/user/<%= follower.id %>'>View Their Profile!</button>
+  <p>User Name: <%= follows.username %></p><button><a href= '/user/<%= follows.id %>'>View Their Profile!</button>
   <p>Email: <%= follows.email %><p>
 <%end%>
 

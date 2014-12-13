@@ -2,7 +2,7 @@
 <div class="left_side"><img class="user_image" src="<%= gravatar_address(@user.email) %>"/>
 	<p class="user_name"><%= @user.username %></p>
 	<% if session[:user_id] != @user.id %>
-	<%= erb :_follow_me_button %>
+	<%= erb :"User/_follow_me_button" %>
 	<%end%>
 	<a href="/user/<%=@user.id%>/following"><button class="body_buttons">Following</button></a>
 	<a href="/user/<%=@user.id%>/followers"><button class="body_buttons">Followers</button></a>

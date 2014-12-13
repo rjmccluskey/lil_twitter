@@ -1,5 +1,5 @@
 
-get '/user/:id' do
+get '/users/:id' do
   @user = User.find(params[:id])
   @tweets = @user.tweets.reverse
   erb :'user/profile'
@@ -24,7 +24,7 @@ get '/users/:id/following' do
   erb :'user/following'
 end
 
-get '/user/:id/timeline' do
+get '/users/:id/timeline' do
   @user = User.find(params[:id])
   @tweets = []
 
@@ -53,7 +53,7 @@ post '/follower/:id' do
   @to_be_followed = User.find(params[:id])
   @follower = User.find(session_user_id)
   @follower.follow(@to_be_followed)
-  redirect ("/user/#{@follower.id}/followers")
+  redirect ("/users/#{@follower.id}/following")
 end
 
 
