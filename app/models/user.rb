@@ -3,9 +3,9 @@ class User < ActiveRecord::Base
 
   include BCrypt
 
-  # validates :username, uniqueness: true
-  # validates :email, uniqueness: true
-  # validates :username, :password, :email, presence: true
+  validates :username, uniqueness: true
+  validates :email, uniqueness: true
+  validates :username, :password, :email, presence: true
 
   def following
     followings = Following.where(follower_id: self.id)
