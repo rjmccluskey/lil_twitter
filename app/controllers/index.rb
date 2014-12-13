@@ -34,7 +34,16 @@ get '/user/:id/following' do
 end
 
 get '/user/:id/timeline' do
-  erb :timeline
+  @user = User.find(params[:id])
+  @tweets = []
+
+  @user.following.each do |followee|
+    @tweets << followee.tweets
+  end
+
+  @tweets.sort_by! {|tweet| tweet.created_at }.reverse
+
+  erb :'user/profile'
 end
 
 delete '/tweet/:id' do
