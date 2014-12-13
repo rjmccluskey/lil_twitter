@@ -1,13 +1,17 @@
-<div class="left_side">Photo<br><br><br><br><br><br><br>
-	<h1><%= @user.username %></h1>
+<div class="left_side"><img class="user_image" src="<%= gravatar_address(@user.email) %>"/>
+	<p class="user_name"><%= @user.username %></p>
+
+	<form action="/follower/<%=@user.id%>" method="post">
+		<input type="submit" value="Follow ME!">
+	</form>
 	<a href="/user/<%=@user.id%>/following"><button class="body_buttons">Following</button></a>
 	<a href="/user/<%=@user.id%>/followers"><button class="body_buttons">Followers</button></a>
 </div>
-<div class="right_side">
-	<form action="/user/<%=@user.id%>" method="post">
+<div class="main_body">
+<!-- 	<form action="/user/<%=@user.id%>" method="post">
 	  <textarea type="text" name="content" class="tweet_box2"></textarea>
 	  <input type="submit" value="Tweet" class="body_buttons"></input>
-	</form>
+	</form> -->
 	<% @tweets.each do |tweet| %>
 	  <p><%= tweet.content %></p>
 	  <form action="/tweet/<%= tweet.id %>" method="post">
@@ -16,6 +20,7 @@
 	  </form>
 	  <a href="/tweet/<%= tweet.id %>/edit"><button>Edit Tweet</button></a>
 	<%end%>
+
 </div>
 
 

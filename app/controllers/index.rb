@@ -1,7 +1,3 @@
-get '/' do
-  erb :login
-end
-
 get '/user/:id' do
   @user = User.find(params[:id])
   @tweets = @user.tweets.reverse
@@ -57,7 +53,13 @@ put '/tweet/:id/edit' do
   redirect ("user/#{@tweet_id.user_id}")
 end
 
-
+post '/follower/:id' do
+  p params
+  @to_be_followed = User.find(params[:id])
+  @follower = User.find(session_user_id)
+  @follower.follow(@to_be_followed)
+  redirect ("/user/#{@follower.id}/followers")
+end
 
 
 
