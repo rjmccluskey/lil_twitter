@@ -35,6 +35,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  def search(name)
+    search_name = name.chars.map {|x| "%" + x + "%" }.join
+    searched_names = User.where("username LIKE 'search_name'" )
+  end
+
   def password
     @password ||= Password.new(password_hash)
   end

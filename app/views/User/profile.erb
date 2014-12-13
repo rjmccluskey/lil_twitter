@@ -1,16 +1,22 @@
-<div class="left_side">Photo<br><br><br><br><br><br><br>
-	<h1><%= @user.username %></h1>
+
+<div class="left_side"><img class="user_image" src="<%= gravatar_address(@user.email) %>"/>
+	<p class="user_name"><%= @user.username %></p>
+	<% if session[:user_id] != @user.id %>
+	<%= erb :_follow_me_button %>
+	<%end%>
 	<a href="/user/<%=@user.id%>/following"><button class="body_buttons">Following</button></a>
 	<a href="/user/<%=@user.id%>/followers"><button class="body_buttons">Followers</button></a>
+
 </div>
-<div class="right_side">
-	<form action="/user/<%=@user.id%>" method="post">
-	  <textarea type="text" name="content" class="tweet_box2"></textarea>
-	  <input type="submit" value="Tweet" class="body_buttons"></input>
-	</form>
+<div class="main_body">
 	<% @tweets.each do |tweet| %>
 	 	<%= erb :"/Tweet/tweet", locals: {tweet: tweet} %>
 	<%end%>
+
 </div>
+</div>
+<div class=''>
+</div>
+
 
 

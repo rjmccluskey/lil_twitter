@@ -1,8 +1,5 @@
-get '/' do
-  erb :login
-end
 
-get '/users/:id' do
+get '/user/:id' do
   @user = User.find(params[:id])
   @tweets = @user.tweets.reverse
   erb :'user/profile'
@@ -27,8 +24,17 @@ get '/users/:id/following' do
   erb :'user/following'
 end
 
-get '/users/:id/timeline' do
-  erb :timeline
+get '/user/:id/timeline' do
+  @user = User.find(params[:id])
+  @tweets = []
+
+  @user.following.each do |followee|
+    @tweets << followee.tweets
+  end
+
+  @tweets.sort_by! {|tweet| tweet.created_at }.reverse
+
+  erb :'user/profile'
 end
 
 get '/tweets/:id/edit' do
@@ -42,7 +48,13 @@ put '/tweets/:id/edit' do
   redirect ("users/#{@tweet_id.user_id}")
 end
 
-
+post '/follower/:id' do
+  p params
+  @to_be_followed = User.find(params[:id])
+  @follower = User.find(session_user_id)
+  @follower.follow(@to_be_followed)
+  redirect ("/user/#{@follower.id}/followers")
+end
 
 
 
