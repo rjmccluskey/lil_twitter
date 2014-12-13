@@ -23,6 +23,8 @@ require 'rack-flash'
 require 'erb'
 require 'faker'
 
+require 'digest/md5'
+
 require 'hirb'
 Hirb.enable
 

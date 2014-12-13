@@ -3,9 +3,9 @@ class User < ActiveRecord::Base
 
   include BCrypt
 
-  validates :username, uniqueness: true
-  validates :email, uniqueness: true
-  validates :username, :password, :email, presence: true
+  # validates :username, uniqueness: true
+  # validates :email, uniqueness: true
+  # validates :username, :password, :email, presence: true
 
   def following
     followings = Following.where(follower_id: self.id)
@@ -33,6 +33,11 @@ class User < ActiveRecord::Base
     unless self.followers.include? user
       Following.create(user_id: self.id, follower_id: user.id)
     end
+  end
+
+  def search(name)
+    search_name = name.chars.map {|x| "%" + x + "%" }.join
+    searched_names = User.where("username LIKE 'search_name'" )
   end
 
   def password
