@@ -7,3 +7,4 @@
     Tweet.create!(content: Faker::Lorem.sentence, user_id: new_user.id)
   end
 end
+
