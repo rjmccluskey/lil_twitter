@@ -22,10 +22,8 @@
     <div class="heading">
       <a href="/user/<%= session_user_id %>/timeline"><button class="headbutton">Timeline</button></a>
       <a href="/user/<%= session_user_id %>"><button class="headbutton">Profile</button></a>
-      <a href="/user/<%= session_user_id %>/followers"><button class="headbutton">Followers</button></a>
-      <a href="/user/<%= session_user_id %>/following"><button class="headbutton">Following</button></a>
       <a href="/logout"><button class="right">Sign Out</button></a>
-      <form action="/user/<%=session_user_id%>" method="post">
+      <form action="/tweets" method="post">
         <input class="tweet" type="submit" value="Tweet">
         <textarea type="text" name="content" class="tweet_box" maxlength="140"></textarea>
       </form>
